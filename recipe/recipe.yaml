@@ -1,0 +1,39 @@
+context:
+  name: marksman
+  version: 2023_12_09
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  git: https://github.com/artempyanykh/marksman
+  tag: ${{ version | replace('_', '-') }}
+
+build:
+  number: 0
+  noarch: generic
+
+requirements:
+  host:
+    - dotnet
+    - nuget-license
+  run:
+    - dotnet
+
+tests:
+  - script:
+      - marksman --help
+
+about:
+  license: MIT
+  license_file:
+    - LICENSE
+    - license-files/
+  summary: Write Markdown with code assist and intelligence in the comfort of your favourite editor
+  homepage: https://github.com/artempyanykh/marksman
+  repository: https://github.com/artempyanykh/marksman
+
+extra:
+  recipe-maintainers:
+    - danielnachun
