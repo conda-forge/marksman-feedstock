@@ -11,7 +11,7 @@ source:
   tag: ${{ version | replace('_', '-') }}
 
 build:
-  number: 0
+  number: 1
   noarch: generic
 
 requirements:
