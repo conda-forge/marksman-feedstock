@@ -27,3 +27,5 @@ tee ignored_packages.json << EOF
 ["FSharp.SystemCommandLine"]
 EOF
 dotnet-project-licenses --input Marksman/Marksman.fsproj -t -d license-files -ignore ignored_packages.json
+
+rm ${PREFIX}/bin/dotnet
