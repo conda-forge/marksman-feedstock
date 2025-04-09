@@ -18,7 +18,7 @@ requirements:
   host:
     - dotnet
     - git
-    - nuget-license
+    - nuget-license >=3.0,<3.1
   run:
     - dotnet
 
