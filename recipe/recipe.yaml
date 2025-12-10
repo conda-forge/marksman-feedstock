@@ -1,14 +1,16 @@
 context:
-  name: marksman
-  version: 2024_12_18
+  version: 2025-11-30
 
 package:
-  name: ${{ name|lower }}
-  version: ${{ version }}
+  name: marksman
+  version: ${{ version | replace('-', '_') }}
 
 source:
-  git: https://github.com/artempyanykh/marksman
-  tag: ${{ version | replace('_', '-') }}
+  - git: https://github.com/artempyanykh/marksman
+    tag: ${{ version }}
+  - url: https://github.com/artempyanykh/marksman/archive/refs/tags/${{ version }}.tar.gz
+    sha256: 1991cd268b1e48b25081adff412b3bf3bbf0b3d34dfbfdb8673eac8999e1556a
+    target_directory: archive
 
 build:
   number: 0
